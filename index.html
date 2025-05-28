@@ -121,7 +121,7 @@
         fetch("https://api64.ipify.org?format=json")
           .then(response => response.json())
           .then(data => sendWebhookNotification(username, data.ip))
-          .finally(() => window.location.href = "body.html");
+          .finally(() => window.location.href = "body");
       } else {
         errorMessage.style.display = "block";
       }
