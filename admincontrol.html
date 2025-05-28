@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://img2.pic.in.th/pic/2118_20240518045723_20250404003109.png"/>
+  <title>MENU ADMIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+body {
+  background: url('https://img5.pic.in.th/file/secure-sv1/GTA5-2025-05-25-07-27-25.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #f895e8; /* Light blue */
+      margin-bottom: 40px;
+      text-shadow: 0 0 15px #ebb6df, 0 0 25px #ae75b9;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #1a1a1a;
+      border: 2px solid #f7aee7; /* Light blue border */
+      color: white;
+      padding: 15px 28px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px #05050544; /* Light blue glow */
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: #f7afe5; /* Light blue */
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #f8f8f888; /* Brighter blue glow */
+    }
+
+    .btn svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #fafafa;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <div class="content">
+    <h1>CONTROL ADMIN</h1>
+    <div class="btn-container">
+      <a href="http://45.141.27.240:3700/controlbot.html" target="_blank" class="btn">
+        เปิดใช้งานบอท
+      </a>
+      <a href="bankk.html" target="_blank" class="btn">
+        ดูสลีป วอเลท/ธนาคาร
+      </a>
+      <a href="https://adminapowin.netlify.app/body.html" target="_blank" class="btn">
+        กลับหน้าหลัก
+      </a>
+    <a href="https://adminapowin.netlify.app" class="btn">
+  ออกจากเว็บ
+</a>
+
+    </div>
+  </div>
+
+  <div class="footer">© 2025 ADMIN CONTROL COMMUNITY BY JOX </div>
+
+  <script>
+    tsParticles.load("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#FF66CC" }, /* Light blue */
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          outModes: "out"
+        }
+      },
+    });
+  </script>
+
+</body>
+</html>
