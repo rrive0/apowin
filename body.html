@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="หน้าผู้ดูแลระบบเว็บไซต์ สำหรับจัดการข้อมูลต่าง ๆ ของระบบ" />
+  <title>แอดมินเว็บไซต์</title>
+  <link rel="icon" type="image/png" href="https://img2.pic.in.th/pic/2118_20240518045723_20250404003109.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://img5.pic.in.th/file/secure-sv1/GTA5-2025-05-25-07-27-25.png') no-repeat center top -8px;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 36px;
+      height: 28px;
+      padding: 6px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4;
+    }
+
+    #menu-toggle span {
+      height: 4px;
+      background: #ff69b4;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    aside {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+      z-index: 40;
+    }
+
+    aside.closed {
+      transform: translateX(-100%);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff69b4;
+      text-shadow: 0 0 8px var(--primary);
+      margin-top: 40px; /* <-- ขยับลงมา */
+      margin-bottom: 40px;
+    }
+
+    button {
+      background: transparent;
+      border: 2px solid #ff69b4;
+      color: #ff69b4;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff69b4;
+      color: black;
+      box-shadow: 0 0 12px #ff69b4;
+    }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #ff69b4;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+    @media (max-width: 768px) {
+      main {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      aside {
+        width: 220px;
+        padding-top: 80px;
+      }
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-toggle" role="button" aria-label="Toggle menu" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <aside id="sidebar">
+    <div class="logo">ADMIN PANEL</div>
+    <button id="webbotBtn" onclick="window.location.href='http://45.141.27.240:4000/webbot.html'">ระบบหลังบ้าน ADMIN</button>
+    <button onclick="location.href='https://tiktok.com/@windekhudbad/live'">ช่องทางสตีม</button>
+  </aside>
+
+  <footer>
+    © 2025 ระบบผู้ดูแลทั้งหมดพัฒนาโดย ADMIN TEAM
+  </footer>
+
+  <!-- Particles -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#FF66CC",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+
+    let menuOpen = true;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      sidebar.classList.toggle('closed');
+      mainContent.classList.toggle('fullwidth');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    function checkWindowSize() {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.add('closed');
+        mainContent.classList.add('fullwidth');
+        menuOpen = false;
+      } else {
+        sidebar.classList.remove('closed');
+        mainContent.classList.remove('fullwidth');
+        menuOpen = true;
+      }
+    }
+
+    window.addEventListener('resize', checkWindowSize);
+    window.addEventListener('load', checkWindowSize);
+        function closeAlert(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.display = 'none';
+      }
+    }
+  <!-- Script ซ่อน/แสดงปุ่ม -->
+    window.onload = function() {
+      const adminCode = localStorage.getItem('adminCode');
+      const webbotBtn = document.getElementById('webbotBtn');
+
+      // รหัสที่อนุญาตให้เห็นปุ่ม 'ระบบหลังบ้าน ADMIN'
+      const allowedAdminCodes = ['122'];
+
+      if (allowedAdminCodes.includes(adminCode)) {
+        webbotBtn.style.display = 'inline-block';
+      } else {
+        webbotBtn.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
